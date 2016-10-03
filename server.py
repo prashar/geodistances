@@ -83,7 +83,9 @@ def GetNeighbors(id):
 
 """ Private Helper Stubs for REST APIS """
 def PrepareData(data):
-    return {'id':data['id'],'geonameid':data['geonameid'],'name':data['name'],'alternatenames':data['alternatenames'],'latitude':data['latitude'],'longitude':data['longitude'],'country code':data['country code']}
+    return {'id':data['id'],'geonameid':data['geonameid'],'name':data['name'],
+            'alternatenames':data['alternatenames'],'latitude':data['latitude'],
+            'longitude':data['longitude'],'country code':data['country code']}
 
 def GetCities(count):
   with app.app_context():
@@ -181,7 +183,9 @@ def ParseResult(db, cityIdx, k, distances, indices):
     while(i < len(distances)):
         cityName = db[indices[i]]['name'] ; 
         cityGeoCoords = [db[indices[i]]['latitude'],db[indices[i]]['longitude']]
-        print "City %s, Lat,Long: (%f,%f), GeoDistance: %f, EuclideanDistance: %f" % (cityName, cityGeoCoords[0],cityGeoCoords[1],DistanceBetweenGeoCoordinates(targetCityGeoCoords,cityGeoCoords),distances[i])
+        print "City %s, Lat,Long: (%f,%f), GeoDistance: %f, EuclideanDistance: %f" % (cityName,
+                cityGeoCoords[0],cityGeoCoords[1],
+                DistanceBetweenGeoCoordinates(targetCityGeoCoords,cityGeoCoords),distances[i])
         i+=1
 
 def PolarToCartesian(latitude,longitude):

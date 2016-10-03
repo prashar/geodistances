@@ -68,6 +68,11 @@ and I can query to find the closest elements to a certain target.
 This doesn't give me accurate results - and I feel it might be the function I'm
 using to do the conversion from polar to cartesian. 
 
+Improvements: 
+----------------------------------
+
+I'm reading entries from the database on every single API - clearly frequent
+call results can be cached using redis - which will result in massive performance improvement. 
 
 How to run
 -----------------------------------
