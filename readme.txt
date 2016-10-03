@@ -69,5 +69,11 @@ This doesn't give me accurate results - and I feel it might be the function I'm
 using to do the conversion from polar to cartesian. 
 
 
+How to run
+-----------------------------------
 
+Need flask, numpy, scipy, pymongo
+ > python server.py
 
+http://127.0.0.1:5000/cities?Name=Victoria&count=4
+http://127.0.0.1:5000/neighbors/143804?k=20&local=true
